@@ -1,0 +1,251 @@
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+
+// Styles
+body {
+  font-family: 'Montserrat', sans-serif;
+  &::before {
+    content: '';
+    background-image: url(../img/bg.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 60vmax;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    @media screen and (max-width: 992px) {
+      opacity: 0.4;
+    }
+  }
+}
+
+// Nav Bar
+.custom-nav {
+  .navbar-brand {
+    img {
+      width: 25px;
+      height: 25px;
+      margin-top: -4px;
+    }
+    span {
+      color: $primaryColor;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-left: 0.4em;
+
+    }
+  }
+
+  #navbarNav {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: $primaryColor;
+          font-weight: 500;
+          text-transform: uppercase;
+          margin-left: 2.4em;
+          &:hover {
+            color: darken($primaryColor, 30%);
+          }
+          transition: .3s color ease;
+        }
+
+        .sign-up-button {
+          @include tombol();
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-top: -1em;
+  }
+}
+
+// Custom Section
+.custom-section {
+  margin-top: 10em;
+  h2 {
+    @include heading;
+    line-height: 1;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 2rem;
+    color: $secondaryColor;
+    line-height: 1;
+  }
+
+  p {
+    @include paragraph;
+  }
+
+  a {
+    margin-top: 2.2em;
+    border: 1px solid transparent;
+    transition: .3s ease;
+    @include tombol();
+
+    &:hover {
+      color: $primaryColor;
+      border: 1px solid $primaryColor;
+      background-color: transparent;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-top: 1em;
+    text-align: center;
+    h2, h3, p {
+      text-shadow: 1px 1px 1px rgba($textColor, 0.5);
+    }
+
+    h3 {
+      color: lighten($textColor, 10%);
+    }
+  }
+}
+
+// Custom About
+.custom-about {
+  margin-top: 5rem;
+  img {
+    width: 400px;
+    height: 400px;
+    padding: 1em;
+    margin: auto;
+  }
+  .desc-about {
+    img {
+      margin: auto;
+      width: 400px;
+      height: 400px;
+    }
+    h2 {
+      @include heading;
+    }
+    p {
+      @include paragraph;
+    }
+  }
+
+  @media screen and (max-width: 992px) { 
+    .desc-about {
+      img {
+        width: 100%;
+      }
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Custom News
+.custom-news {
+  margin-top: 5rem;
+  h2 {
+    text-align: center;
+    @include heading;
+  }
+
+  .news-items {
+    .card {
+      img {
+        height: 20vmax;
+      }
+      .card-action {
+        text-align: center;
+        margin-bottom: 2em;
+        a {
+          border: 1px solid transparent;
+          transition: .3s ease;
+          @include tombol;
+          &:hover {
+            color: $primaryColor;
+            border: 1px solid $primaryColor;
+            background-color: transparent;
+          }
+        }
+      }
+      @media screen and (max-width: 992px) { 
+        img {
+          height: auto;
+        }
+      }
+    }
+  }
+  
+  .more-news {
+    margin-top: 2em;
+    text-align: center;
+    a {
+      border: 1px solid transparent;
+      transition: .3s ease;
+      @include tombol;
+      &:hover {
+        color: $primaryColor;
+        border: 1px solid $primaryColor;
+        background-color: transparent;
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) { 
+    .news-items {
+      margin-bottom: 1.5em;
+    }
+  }
+}
+
+// Custom Contact
+.custom-contact {
+  margin-top: 5rem;
+  h2 {
+    text-align: center;
+    @include heading;
+  }
+  .contact-desc {
+    width: 50%;
+    padding-right: 1em;
+    .contact-item {
+      margin-top: 0.5em;
+      width: 300px;
+      padding: 0.3em;
+      color: white;
+      border-radius: 50px;
+      background-color: $textColor;
+      font-weight: 500;
+      font-size: 1rem;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    @media screen and (max-width: 992px) { 
+      padding-right: 0;
+      margin-top: 2em;
+    }
+  }
+  img {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+// Footer
+.footer {
+  margin-top: 5rem;
+  font-size: 0.8em;
+  font-weight: 400;
+  color: $textColor;
+  p {
+    text-align: center;
+  }
+}
+

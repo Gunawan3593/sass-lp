@@ -1,0 +1,21 @@
+// mixin
+@mixin tombol {
+  display: inline-block;
+  color: white;
+  background-color: $primaryColor;
+  border-radius: 2em;
+  padding: 0.5em 2em;
+  text-decoration: none;
+}
+
+@mixin heading {
+  font-weight: 700;
+  font-size: 3rem;
+  color: $primaryColor;
+}
+
+@mixin paragraph {
+  color: $textColor;
+  font-size: 1.1rem;
+  margin-top: 0.5em;
+}
